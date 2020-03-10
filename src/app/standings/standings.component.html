@@ -1,0 +1,23 @@
+
+<div class=" offset-lg-1 col-lg-3" style="margin-bottom: 2%; margin-top: 2%;">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-light btn-outline-primary">
+      <input type="radio" (click)="toggleLeague()" name="options" id="option1" autocomplete="off" checked> League Standings
+    </label>
+    <label class="btn btn-light btn-outline-primary">
+      <input type="radio" (click)="toggleConference()" name="options" id="option2" autocomplete="off"> Conference Standings
+    </label>
+    <label class="btn btn-light btn-outline-primary">
+      <input (click)="toggleDivision()" type="radio" name="options" id="option3" autocomplete="off"> Division Standings
+    </label>
+  </div>
+</div>
+<div *ngIf="standing === 0">
+  <app-league-standings></app-league-standings>
+</div>
+<div *ngIf="standing === 1">
+  <app-conference-standings></app-conference-standings>
+</div>
+<div *ngIf="standing === 2">
+  <app-division-standings></app-division-standings>
+</div>

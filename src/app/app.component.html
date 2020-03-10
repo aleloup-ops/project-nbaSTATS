@@ -1,0 +1,23 @@
+ <nav class="navbar navbar-expand-sm bg-primary">
+    <img routerLink="/" routerLinkActive="active" style="width: 2%;" src="https://icons.iconarchive.com/icons/blackvariant/button-ui-requests-13/512/NBA-icon.png">
+    <a routerLink="/" routerLinkActive="active" class="navbar-brand" style="color: white;"> NBA Stats</a>
+    <div class="divider"></div>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link disabled" style="color: white;">Classements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" style="color: white;">All Stars</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" style="color: white;">Fantasy League</a>
+            </li>
+          </ul>
+      </div>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search for a player" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+  </nav>
+    <router-outlet></router-outlet>

@@ -1,0 +1,58 @@
+<div class=" offset-lg-1 col-lg-2" style="margin-bottom: 2%; margin-top: 2%;"> 
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-light btn-outline-primary" active>
+        <input type="radio" (click)="toggleEast()" name="options" id="option1" autocomplete="off" checked> Eastern Conference
+      </label>
+      <label class="btn btn-light btn-outline-primary">
+        <input type="radio" (click)="toggleWest()" name="options" id="option2" autocomplete="off"> Western Conference
+      </label>
+    </div>
+</div>
+<div class="col-lg-5" *ngIf="conference === 0">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Rang</th>
+            <th scope="col">Equipe</th>
+            <th scope="col">Victoires</th>
+            <th scope="col">Défaites</th>
+            <th scope="col">Pct.</th>
+            <th scope="col">Série</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let team of standings.league.standard.conference.east; let i = index">
+            <th scope="row" class="row-bordered">{{ i + 1 }}</th>
+            <td><img style="width: 12%" src="https://stats.nba.com/media/img/teams/logos/{{ team.teamSitesOnly.teamTricode }}_logo.svg">{{ team.teamSitesOnly.teamName + ' ' +  team.teamSitesOnly.teamNickname }}</td>
+            <td style="color: green;">{{ team.win }}</td>
+            <td style="color: red;">{{ team.loss }}</td>
+            <td>{{ team.winPct }}</td>
+            <td>{{ team.teamSitesOnly.streakText }}</td>
+          </tr>
+        </tbody>
+    </table> 
+</div>
+<div class="col-lg-5" *ngIf="conference === 1">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Rang</th>
+            <th scope="col">Equipe</th>
+            <th scope="col">Victoires</th>
+            <th scope="col">Défaites</th>
+            <th scope="col">Pct.</th>
+            <th scope="col">Série</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let team of standings.league.standard.conference.west; let i = index">
+            <th scope="row" class="row-bordered">{{ i + 1 }}</th>
+            <td><img style="width: 12%" src="https://stats.nba.com/media/img/teams/logos/{{ team.teamSitesOnly.teamTricode }}_logo.svg">{{ team.teamSitesOnly.teamName + ' ' +  team.teamSitesOnly.teamNickname }}</td>
+            <td style="color: green;">{{ team.win }}</td>
+            <td style="color: red;">{{ team.loss }}</td>
+            <td>{{ team.winPct }}</td>
+            <td>{{ team.teamSitesOnly.streakText }}</td>
+          </tr>
+        </tbody>
+    </table> 
+</div>
